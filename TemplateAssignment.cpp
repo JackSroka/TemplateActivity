@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-int max_two(int num1, int num2) {
-    if(num1 > num2) {
-        cout << "The first number is greater" << endl;
-    }
-    else if(num2 > num1) {
-        cout << "The second number is greater" << endl;
+template <typename T>
+T max_two(T thing1, T thing2){
+    if (thing1 > thing2){
+        return thing1;
+    } else {
+        return thing2;
     }
 }
 
