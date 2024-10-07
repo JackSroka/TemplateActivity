@@ -29,6 +29,7 @@ int swap(int num1, int num2) {
     num2 = num;
 }
 int main() {
+    cout << max_two(1,2);
     
     return 0;
 }
