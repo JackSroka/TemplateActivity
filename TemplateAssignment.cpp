@@ -1,6 +1,7 @@
 #include <iostream>
-using namespace std;
+#include <string>
 
+using namespace std;
 template <typename T>
 T max_two(T thing1, T thing2){
     if (thing1 > thing2){
@@ -10,26 +11,36 @@ T max_two(T thing1, T thing2){
     }
 }
 
-int max_three(int num1, int num2, int num3) {
-    if(num1 > num2 && num1 > num3) {
-        cout << "The first number is greater" << endl;
+template <typename T>
+T max_three(T thing1, T thing2, T thing3){
+    if (thing1 > thing2){
+        if (thing1 > thing3) {
+            return thing1;
+        } else {
+            return thing3;
+        }
+    } else if (thing2 > thing3) {
+        return thing2;
+    } else {
+        return thing3;
     }
-    else if(num2 > num1 && num2 > num3) {
-        cout << "The second number is greater" << endl;
-    }
-    else if(num3 > num1 && num3 > num2) {
-        cout << "The third number is greater" << endl;
-    }
-    
 }
 
-int swap(int num1, int num2) {
-    num = num1;
-    num1 = num2;
-    num2 = num;
+template <typename T>
+string swap(T thing1, T thing2){
+    T temp = thing1;
+    T jemp = thing2;
+    thing2 = temp;
+    thing1 = jemp;
+    return to_string(thing1) + " " + to_string(thing2);
 }
+
 int main() {
-    cout << max_two(1,2);
-    
+    cout << max_two(1,2) << "\n";
+    cout << max_three(1,2,3) << "\n";
+    cout << max_three(1,3,2) << "\n";
+    cout << max_three(3,2,1) << "\n";
+    cout << swap(1,2) << "\n";
+
     return 0;
 }
